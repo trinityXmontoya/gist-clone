@@ -3,7 +3,7 @@
   (:require [datomic.client.api :as d]
             [gist-clone.database.config :as config]))
 
-(def all-gists-by-user-query
+(defn all-gists-by-user-query
   [user]
   (let [query '[:find ?entity
                 :where [?entity :gist/owner_id (user :id)]]]
